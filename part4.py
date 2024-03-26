@@ -122,7 +122,7 @@ def compute():
     """
 
     # dct is the function described above in 4.C
-    dct = answers["4A: modified function"] = fit_modified
+    dct = answers["4C: modified function"] = fit_modified
     hierarchical_dict_plotting={}
     for dataset_i in answers['4A: datasets'].keys():
         acc=[]
