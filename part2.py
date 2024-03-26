@@ -94,7 +94,7 @@ def compute():
     X=np.concatenate([answers["2A: blob"][0],answers['2A: blob'][1]],axis=1)
     # print(X)
     # dct value: the `fit_kmeans` function
-    dct = answers["2B: fit_kmeans"] = fit_kmeans(X,k=5)[1]
+    dct = answers["2B: fit_kmeans"] = fit_kmeans
     # print('here')
     # print(dct)
 
