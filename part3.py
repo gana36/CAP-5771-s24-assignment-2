@@ -80,7 +80,8 @@ def compute():
     D.	Write a function that takes the data and the two index sets {I,J} above, and returns the dissimilarity given by single link clustering using the Euclidian distance metric. The function should output the same value as the 3rd column of the row found in problem 2.C.
     """
     # Answer type: a function defined above
-    answers["3D: function"] = data_index_function(data['X'],I={8,2,13},J={1,9})
+    answers["3D: function"] = data_index_function
+    # answers["3D: function"] = data_index_function(data['X'],I={8,2,13},J={1,9})
     # print(answers["3D: function"])
 
     """
