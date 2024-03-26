@@ -37,8 +37,20 @@ def fit_hierarchical_cluster(data,linkage_type,num_of_clusters,random_state):
     labels = model.labels_
     return labels
 
-def fit_modified():
-    return None
+def fit_modified(data,linkage_type,num_of_clusters,random_state):
+    Z=linkage(data[0],linkage_type)
+    # data[0]
+    distances=[]
+    for i in range(len(Z)):
+        if i+1!=len(Z):
+            merge_dist=Z[i+1,2] - Z[i,2]
+            distances.append(merge_dist)
+    model = AgglomerativeClustering(n_clusters=None, linkage=linkage_type,distance_threshold=np.max(distances))
+    ss=StandardScaler()
+    train=ss.fit_transform(data[0])
+    model.fit(train,data[1])
+    labels = model.labels_
+    return labels
 
 
 def compute():
@@ -111,6 +123,19 @@ def compute():
 
     # dct is the function described above in 4.C
     dct = answers["4A: modified function"] = fit_modified
+    hierarchical_dict_plotting={}
+    for dataset_i in answers['4A: datasets'].keys():
+        acc=[]
+        dataset_cluster={}
+        for linkage in ['single','complete','ward','average']:
+            #x_y=answers['1A: datasets'][dataset_i]
+            preds=dct((answers['4A: datasets'][dataset_i][0],answers['4A: datasets'][dataset_i][1]),linkage,2,42)
+            dataset_cluster[linkage]=preds
+        acc.append((answers['4A: datasets'][dataset_i][0],answers['4A: datasets'][dataset_i][1]))
+        acc.append(dataset_cluster)
+        hierarchical_dict_plotting[dataset_i]=acc
+ 
+    myplt.plot_part1C(hierarchical_dict_plotting,'question4_C.jpg')    
 
     return answers
 
