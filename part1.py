@@ -93,19 +93,23 @@ def compute():
     
     # Create a pdf of the plots and return in your report. 
     # """
-    Kmeans_dict_plotting={}
-    for dataset_i in answers['1A: datasets'].keys():
-        acc=[]
-        dataset_cluster={}
-        for num_cluster in [2,3,5,10]:
-            preds=dct((answers['1A: datasets'][dataset_i][0],answers['1A: datasets'][dataset_i][1]),num_cluster,"random")
-            dataset_cluster[num_cluster]=preds
-        acc.append((answers['1A: datasets'][dataset_i][0],answers['1A: datasets'][dataset_i][1]))
-        acc.append(dataset_cluster)
-        Kmeans_dict_plotting[dataset_i]=acc
 
-    myplt.plot_part1C(Kmeans_dict_plotting,'Part1_C.jpg')
+    # '''These are essentials'''
+    # Kmeans_dict_plotting={}
+    # for dataset_i in answers['1A: datasets'].keys():
+    #     acc=[]
+    #     dataset_cluster={}
+    #     for num_cluster in [2,3,5,10]:
+    #         preds=dct((answers['1A: datasets'][dataset_i][0],answers['1A: datasets'][dataset_i][1]),num_cluster,"random")
+    #         dataset_cluster[num_cluster]=preds
+    #     acc.append((answers['1A: datasets'][dataset_i][0],answers['1A: datasets'][dataset_i][1]))
+    #     acc.append(dataset_cluster)
+    #     Kmeans_dict_plotting[dataset_i]=acc
 
+    # myplt.plot_part1C(Kmeans_dict_plotting,'Part1_C.jpg')
+
+
+    
     # # dct value: return a dictionary of one or more abbreviated dataset names (zero or more elements) 
     # # and associated k-values with correct clusters.  key abbreviations: 'nc', 'nm', 'bvv', 'add', 'b'. 
     # # The values are the list of k for which there is success. Only return datasets where the list of cluster size k is non-empty.
@@ -119,17 +123,17 @@ def compute():
     dct=answers["1C: cluster failures"] = ["nc","nm"]
 
 
-    Kmeans_dict_plotting={}
-    for dataset_i in answers['1A: datasets'].keys():
-        acc=[]
-        dataset_cluster={}
-        for num_cluster in [2,3]:
-            preds=results_from_fit((answers['1A: datasets'][dataset_i][0],answers['1A: datasets'][dataset_i][1]),num_cluster,'random')
-            dataset_cluster[num_cluster]=preds
-        acc.append((answers['1A: datasets'][dataset_i][0],answers['1A: datasets'][dataset_i][1]))
-        acc.append(dataset_cluster)
-        Kmeans_dict_plotting[dataset_i]=acc
-    myplt.plot_part1C(Kmeans_dict_plotting,'Part1_D_3.jpg')
+    # Kmeans_dict_plotting={}
+    # for dataset_i in answers['1A: datasets'].keys():
+    #     acc=[]
+    #     dataset_cluster={}
+    #     for num_cluster in [2,3]:
+    #         preds=results_from_fit((answers['1A: datasets'][dataset_i][0],answers['1A: datasets'][dataset_i][1]),num_cluster,'random')
+    #         dataset_cluster[num_cluster]=preds
+    #     acc.append((answers['1A: datasets'][dataset_i][0],answers['1A: datasets'][dataset_i][1]))
+    #     acc.append(dataset_cluster)
+    #     Kmeans_dict_plotting[dataset_i]=acc
+    # myplt.plot_part1C(Kmeans_dict_plotting,'Part1_D_3.jpg')
 
 
     # """
