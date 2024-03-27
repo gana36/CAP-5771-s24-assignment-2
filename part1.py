@@ -115,17 +115,17 @@ def compute():
     # # The values are the list of k for which there is success. Only return datasets where the list of cluster size k is non-empty.
     
     
-    # dct=answers["1C: cluster successes"] = {"bvv": [3], "add": [3], "b": [3]} 
-
-    # # dct value: return a list of 0 or more dataset abbreviations (list has zero or more elements, 
-    # # which are abbreviated dataset names as strings)
-
-    # dct=answers["1C: cluster failures"] = ["nc","nm"]
-    dct = answers["1C: cluster successes"] = {"xy": [3,4], "zx": [2]} 
+    dct=answers["1C: cluster successes"] = {"bvv": [3], "add": [3], "b": [3]} 
 
     # dct value: return a list of 0 or more dataset abbreviations (list has zero or more elements, 
     # which are abbreviated dataset names as strings)
-    dct = answers["1C: cluster failures"] = ["xy"]
+
+    dct=answers["1C: cluster failures"] = ["nc","nm"]
+    # dct = answers["1C: cluster successes"] = {"xy": [3,4], "zx": [2]} 
+
+    # # dct value: return a list of 0 or more dataset abbreviations (list has zero or more elements, 
+    # # which are abbreviated dataset names as strings)
+    # dct = answers["1C: cluster failures"] = ["xy"]
 
     # Kmeans_dict_plotting={}
     # for dataset_i in answers['1A: datasets'].keys():
